@@ -47,6 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
         android:fontFamily="sans-serif"
+        android:onClick="oyente_btnEntrar"
         android:text="@string/btn_Entrar"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"

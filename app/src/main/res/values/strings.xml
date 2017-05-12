@@ -2,5 +2,10 @@
     <string name="app_name">miIkea</string>
     <string name="action_settings">Settings</string>
     <string name="bienvenido_Ikea">Descubre tus nuevos muebles</string>
-    <string name="btn_Entrar">Entrar</string>
+    <string name="btn_Entrar">Acceder</string>
+    <string name="txtAutenticar">Introduzca sus datos para entrar:</string>
+    <string name="txtUsuario">Usuario:</string>
+    <string name="lblPassword">Contraseña:</string>
+    <string name="btnLogin">Entrar</string>
+    <string name="btnCuenta">¿No tiene cuenta? Resgístrese</string>
 </resources>
