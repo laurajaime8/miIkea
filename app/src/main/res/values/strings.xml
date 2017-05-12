@@ -8,4 +8,8 @@
     <string name="lblPassword">Contraseña:</string>
     <string name="btnLogin">Entrar</string>
     <string name="btnCuenta">¿No tiene cuenta? Resgístrese</string>
+    <string name="txtNombreNuevo">Introduzca su mail:</string>
+    <string name="txtContrasena">Contraseña:</string>
+    <string name="lblRepiteContrasena">Repite la contraseña:</string>
+    <string name="btnRegistrarse">Registrar</string>
 </resources>
