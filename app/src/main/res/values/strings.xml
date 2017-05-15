@@ -13,4 +13,5 @@
     <string name="lblRepiteContrasena">Repite la contraseña:</string>
     <string name="btnRegistrarse">Registrar</string>
     <string name="btnVolver">Volver</string>
+    <string name="lblSeleccionado" />
 </resources>

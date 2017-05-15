@@ -15,7 +15,7 @@
         android:text="@string/txtUsuario" />
 
     <EditText
-        android:id="@+id/txtUsuario"
+        android:id="@+id/txtMail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,7 +38,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btn_Loguearse"
+        android:onClick="oyente_btnLoguearse"
         android:text="@string/btnLogin"
         android:textAlignment="center" />
 
