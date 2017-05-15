@@ -1,5 +1,6 @@
 package ipo2.esi.miikea;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -11,7 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class ConectorBD {
 
-    static final String NOMBRE_BD = "AgendaLocal";
+    static final String NOMBRE_BD = "miIkea";
     private UsuariosSQLiteHelper dbHelper;
     private SQLiteDatabase db;
 
@@ -32,14 +33,19 @@ public class ConectorBD {
         if (db != null) db.close();
     }
     /*inserta un contacto en la BD*/
-    public void insertarUsuario(String email, String password)
+    public long insertarUsuario(String email, String password, String password2)
     {
-        String consultaSQL= "INSERT INTO usuarios VALUES('"+email+"','"+password+"')";
-        db.execSQL(consultaSQL);
+        /*String consultaSQL= "INSERT INTO usuarios VALUES('"+email+"','"+password+"')";
+        db.execSQL(consultaSQL);*/
+        ContentValues nuevoUsuario= new ContentValues();
+        nuevoUsuario.put("email", email);
+        nuevoUsuario.put("password", password);
+        return db.insert("Usuarios", null, nuevoUsuario);
     }
     /*devuelve todos los contactos*/
     public Cursor listarUsuarios()
     {
-        return db.rawQuery("SELECT * FROM Usuarios", null);
+        //return db.rawQuery("SELECT * FROM Usuarios", null);
+        return db.query("Usuarios", new String[] {"email","password"}, null, null, null, null, null);
     }
 }
