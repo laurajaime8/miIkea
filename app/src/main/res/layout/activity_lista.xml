@@ -9,9 +9,18 @@
         android:layout_height="wrap_content"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btnCargarProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="oyente_btnCargarProductos"
+        android:text="@string/btnCargarProductos"
+        android:textSize="10sp" />
+
     <ListView
         android:id="@+id/lstMuebles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:choiceMode="singleChoice" />
+
 </LinearLayout>

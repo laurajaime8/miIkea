@@ -33,6 +33,8 @@ public class Autenticar extends Activity{
 
 
     static final String URL_PHP_JSON ="http://192.168.56.1/ProyectoMiIkea/BuscarUsuariosBD.php";
+
+    //static final String LISTAR_PRODUCTOS = "http://192.168.56.1/ProyectoMiIkea/ListarProductos.php";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +48,12 @@ public class Autenticar extends Activity{
     }
 
 
-    public void oyente_btnLoguearse(View view){
-       // Log.d("Debug_bienvenido", "Pulsó el botón Login");
-        Intent i = new Intent(this, AdaptadorLista.class);
+    public void oyente_btnLoguearse(View view) {
+        // Log.d("Debug_bienvenido", "Pulsó el botón Login");
+        /*ESTATICO*/
+        Intent i = new Intent(this, Lista.class);
         startActivity(i);
+
     }
 
 
