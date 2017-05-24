@@ -1,11 +1,13 @@
 package ipo2.esi.miikea;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -75,6 +77,25 @@ public class Lista extends Activity{
         });
 
     }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.acercaDe:
+                Log.d("LogCat","Pulsó la opción de menú Acerca De...");
+                //Se muestra una ventana de diálogo
+                AlertDialog.Builder builder= new AlertDialog.Builder(this);
+                builder.setTitle("Acerca de...");
+                builder.setMessage("Aplicación creada por Laura Jaime y Oliva Gálvez");
+                builder.setPositiveButton("OK",null);
+                builder.create();
+                builder.show();
+                break;
+            case R.id.aniadirContacto:
+                Log.d("LogCat","Pulsó la opción de menú Añadir Contacto");
+        }
+        return true;
+    }
+
 
     public void oyente_btnCargarProductos(View v){
         CargarProductosURL leerContactosURL= new CargarProductosURL();

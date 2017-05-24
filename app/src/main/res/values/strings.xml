@@ -15,4 +15,7 @@
     <string name="btnVolver">Volver</string>
     <string name="lblSeleccionado" />
     <string name="btnCargarProductos">Listar productos...</string>
+
+    <string name="menuListarMuebles">Listar muebles...</string>
+    <string name="menuAcercaDe">Acerca de...</string>
 </resources>
