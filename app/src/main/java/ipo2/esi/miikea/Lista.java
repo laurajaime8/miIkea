@@ -2,6 +2,7 @@ package ipo2.esi.miikea;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -95,6 +96,14 @@ public class Lista extends Activity{
         switch(item.getItemId()) {
             case R.id.verDetalles:
                 Log.d("LogCat","Pulsó la opción del menú contextual Ver Detalles");
+                //Pasar los datos del contacto a la otra ventana
+                Intent i = new Intent(this, DetallesMueble.class);
+                Log.d("LogCat", "Item seleccionado "+muebleSeleccionado);
+                i.putExtra("nombre", muebles.get(muebleSeleccionado).getNombre());
+                i.putExtra("precio", muebles.get(muebleSeleccionado).getPrecio());
+                i.putExtra("tipo",muebles.get(muebleSeleccionado).getCategoria());
+                i.putExtra("descripcion",muebles.get(muebleSeleccionado).getDescripcion());
+                startActivityForResult(i, 1234);
                 break;
             case R.id.borrarMueble:
                 muebles.remove(muebleSeleccionado);
@@ -102,7 +111,23 @@ public class Lista extends Activity{
                 Log.d("LogCat","Pulsó la opción de menú contextual Borrar Contacto");
         }
         return true;
+
+
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        Bundle b = data.getExtras();
+        if (requestCode == 1234){
+            if (resultCode == RESULT_OK){
+                Mueble muebleModificado = new Mueble(1,b.getString("nombre"),b.getInt("precio"), b.getInt("tipo"), b.getString("descripcion"));
+                muebles.set(muebleSeleccionado, muebleModificado);
+                ((AdaptadorLista)lstMuebles.getAdapter()).notifyDataSetChanged();
+            }
+        }
+    }
+
+
 
 
 

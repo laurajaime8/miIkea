@@ -22,5 +22,10 @@
 
     <string name="menuContextVerDetalles">Ver detalles</string>
     <string name="menuContextBorrarMueble">Borrar mueble</string>
+    <string name="lblNombre">Nombre</string>
+    <string name="lblPrecio">Precio (€)</string>
+    <string name="lblCategoria">Tipo</string>
+    <string name="lblDescripcion">Descripción</string>
+    <string name="btnGuardar">Guardar cambios</string>
 
 </resources>
