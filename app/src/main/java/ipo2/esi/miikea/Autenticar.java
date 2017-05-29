@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
  * Created by Laura Jaime on 12/05/2017.
  */
 
-public class Autenticar extends Activity{
+public class Autenticar extends Activity {
 
     private EditText txtMail;
     private EditText txtPassword;
@@ -39,7 +40,6 @@ public class Autenticar extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autenticar);
-
     }
 
     public void oyente_btnRegistrarse(View v){
@@ -47,13 +47,13 @@ public class Autenticar extends Activity{
         startActivity(i);
     }
 
-
     public void oyente_btnLoguearse(View view) {
-        // Log.d("Debug_bienvenido", "Pulsó el botón Login");
+        Log.d("Debug_bienvenido", "Pulsó el botón Login");
         /*ESTATICO*/
+
+        //No funciona FUCK
         Intent i = new Intent(this, Lista.class);
         startActivity(i);
-
     }
 
 
