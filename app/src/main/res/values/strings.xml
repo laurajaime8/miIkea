@@ -16,6 +16,11 @@
     <string name="lblSeleccionado" />
     <string name="btnCargarProductos">Listar productos...</string>
 
-    <string name="menuListarMuebles">Listar muebles...</string>
+    <string name="menuAniadirMueble">Añadir mueble</string>
     <string name="menuAcercaDe">Acerca de...</string>
+    <string name="btnAgregarMueble">Añadir mueble...</string>
+
+    <string name="menuContextVerDetalles">Ver detalles</string>
+    <string name="menuContextBorrarMueble">Borrar mueble</string>
+
 </resources>

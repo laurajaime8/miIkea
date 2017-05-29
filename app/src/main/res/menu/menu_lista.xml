@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item android:id="@+id/aniadirContacto"
-        android:title="@string/menuListarMuebles"
+        android:title="@string/menuAniadirMueble"
+        app:showAsAction="always"
         />
-    <item
-        android:id="@+id/acercaDe"
-        android:icon="@drawable/acercade"
+    <item android:id="@+id/acercaDe"
         android:title="@string/menuAcercaDe"
-        app:showAsAction="always" />
+        android:icon="@drawable/acercade"
+        />
 </menu>
