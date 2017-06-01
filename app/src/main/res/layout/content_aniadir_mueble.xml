@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ipo2.esi.miikea.AniadirMueble"
+    tools:showIn="@layout/activity_aniadir_mueble">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblNombre"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblPrecio"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtPrecio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblCategoria"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinnerTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblDescripcion"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btnAniadir" />
+    </TableRow>
+
+</TableLayout>

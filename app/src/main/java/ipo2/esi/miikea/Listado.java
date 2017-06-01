@@ -95,6 +95,14 @@ public class Listado extends AppCompatActivity {
                 break;
             case R.id.aniadirMueble:
                 Log.d("LogCat","Pulsó la opción de menú Añadir Contacto");
+                Intent i = new Intent(this, AniadirMueble.class);
+                Log.d("LogCat", "Item seleccionado "+muebleSeleccionado);
+                i.putExtra("nombre", muebles.get(muebleSeleccionado).getNombre());
+                i.putExtra("precio", muebles.get(muebleSeleccionado).getPrecio());
+                i.putExtra("tipo",muebles.get(muebleSeleccionado).getCategoria());
+                i.putExtra("descripcion",muebles.get(muebleSeleccionado).getDescripcion());
+                startActivityForResult(i, 1234);
+                break;
 
         }
         return true;
@@ -132,6 +140,13 @@ public class Listado extends AppCompatActivity {
             if (resultCode == RESULT_OK){
                 Mueble muebleModificado = new Mueble(1,b.getString("nombre"),b.getInt("precio"), b.getInt("tipo"), b.getString("descripcion"));
                 muebles.set(muebleSeleccionado, muebleModificado);
+                ((AdaptadorLista)lstMuebles.getAdapter()).notifyDataSetChanged();
+            }
+        }
+        if (requestCode == 4321){
+            if (resultCode == RESULT_OK){
+                Mueble nuevoMueble = new Mueble(1,b.getString("nombre"),b.getInt("precio"), b.getInt("tipo"), b.getString("descripcion"));
+                muebles.set(muebleSeleccionado, nuevoMueble);
                 ((AdaptadorLista)lstMuebles.getAdapter()).notifyDataSetChanged();
             }
         }

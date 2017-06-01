@@ -29,6 +29,10 @@
         <activity
             android:name=".Listado"
             android:label="@string/title_activity_listado"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AniadirMueble"
+            android:label="@string/title_activity_aniadir_mueble"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

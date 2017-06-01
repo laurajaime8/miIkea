@@ -87,8 +87,7 @@ public class Lista extends Activity{
                 builder.create();
                 builder.show();
                 break;
-            case R.id.aniadirContacto:
-                Log.d("LogCat","Pulsó la opción de menú Añadir Contacto");
+
         }
         return true;
     }

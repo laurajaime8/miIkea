@@ -29,5 +29,7 @@
     <string name="btnGuardar">Guardar cambios</string>
     <string name="btnRegistrar">Registrarse</string>
     <string name="title_activity_listado">Listado</string>
+    <string name="title_activity_aniadir_mueble">AniadirMueble</string>
+    <string name="btnAniadir">Añadir nuevo mueble</string>
 
 </resources>
