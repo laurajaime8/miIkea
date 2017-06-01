@@ -3,6 +3,8 @@ package ipo2.esi.miikea;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
 
 /**
  * Created by Laura Jaime on 12/05/2017.
@@ -29,17 +21,44 @@ import java.util.ArrayList;
 
 public class Autenticar extends Activity {
 
-    private EditText txtMail;
-    private EditText txtPassword;
+     EditText txtMail;
+     EditText txtPassword;
 
+    private Cursor fila;
 
-    static final String URL_PHP_JSON ="http://192.168.56.1/ProyectoMiIkea/BuscarUsuariosBD.php";
-
-    //static final String LISTAR_PRODUCTOS = "http://192.168.56.1/ProyectoMiIkea/ListarProductos.php";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autenticar);
+
+        txtMail = (EditText) findViewById(R.id.txtMail);
+        txtPassword = (EditText) findViewById(R.id.txtPassword);
+    }
+
+
+    public void oyente_btnLoguearse(View v) {
+        Intent i = new Intent(this, Listado.class);
+        startActivity(i);
+        /*UsuariosSQLiteHelper admin = new UsuariosSQLiteHelper(this, "miikea",null,1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String mail = txtMail.getText().toString();
+        String pass = txtPassword.getText().toString();
+        fila=db.rawQuery("select email,password from usuarios where email='"+mail+"' and password='"+pass+"'",null);
+
+        if(fila.moveToFirst()){
+
+                String u = fila.getString(0);
+                String p = fila.getString(1);
+
+                if (mail.equals(u) && pass.equals(p)) {*/
+                   // Intent i = new Intent(this, Lista.class);
+                  //  startActivity(i);
+               // }
+
+
+       // }
+       
     }
 
     public void oyente_btnRegistrarse(View v){
@@ -47,14 +66,12 @@ public class Autenticar extends Activity {
         startActivity(i);
     }
 
-    public void oyente_btnLoguearse(View view) {
-        Log.d("Debug_bienvenido", "Pulsó el botón Login");
-        /*ESTATICO*/
 
-        //No funciona FUCK
-        Intent i = new Intent(this, Lista.class);
-        startActivity(i);
-    }
+
+
+
+
+
 
 
 }

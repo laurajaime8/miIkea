@@ -25,7 +25,11 @@
         <activity android:name=".Autenticar" />
         <activity android:name=".Registrar" />
         <activity android:name=".Lista" />
-        <activity android:name=".DetallesMueble"></activity>
+        <activity android:name=".DetallesMueble" />
+        <activity
+            android:name=".Listado"
+            android:label="@string/title_activity_listado"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

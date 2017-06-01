@@ -2,7 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/aniadirContacto"
+    <item android:id="@+id/aniadirMueble"
         android:title="@string/menuAniadirMueble"
         app:showAsAction="always"
         />

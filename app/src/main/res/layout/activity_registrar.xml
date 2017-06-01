@@ -38,11 +38,9 @@
 
     <ImageButton
         android:id="@+id/btnRegistrarse"
-        style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        android:layout_height="88dp"
+        app:srcCompat="@drawable/registrar" />
 
     <Button
         android:id="@+id/btnVolver"

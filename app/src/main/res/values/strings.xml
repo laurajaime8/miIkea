@@ -27,5 +27,7 @@
     <string name="lblCategoria">Tipo</string>
     <string name="lblDescripcion">Descripción</string>
     <string name="btnGuardar">Guardar cambios</string>
+    <string name="btnRegistrar">Registrarse</string>
+    <string name="title_activity_listado">Listado</string>
 
 </resources>

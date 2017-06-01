@@ -32,20 +32,23 @@ public class ConectorBD {
     {
         if (db != null) db.close();
     }
+
+
     /*inserta un contacto en la BD*/
-    public long insertarUsuario(String email, String password, String password2)
+    public long insertarUsuario(String email, String password)
     {
-        /*String consultaSQL= "INSERT INTO usuarios VALUES('"+email+"','"+password+"')";
-        db.execSQL(consultaSQL);*/
+       /* String consultaSQL= "INERT INTO usuarios VALUES('"+email+"','"+password+"')";*/
+        //db.execSQL(consultaSQL);
         ContentValues nuevoUsuario= new ContentValues();
         nuevoUsuario.put("email", email);
         nuevoUsuario.put("password", password);
         return db.insert("Usuarios", null, nuevoUsuario);
     }
+
     /*devuelve todos los contactos*/
     public Cursor listarUsuarios()
     {
-        //return db.rawQuery("SELECT * FROM Usuarios", null);
-        return db.query("Usuarios", new String[] {"email","password"}, null, null, null, null, null);
+       // return db.rawQuery("SELECT * FROM Usuarios", null);
+       return db.query("Usuarios", new String[] {"email","password"}, null, null, null, null, null);
     }
 }
