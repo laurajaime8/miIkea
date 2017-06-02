@@ -58,13 +58,12 @@ public class Listado extends AppCompatActivity {
         lstMuebles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int posicion, long id) {
-                //lblSeleccionado.setText("Contacto seleccionado: "+ lstMuebles.getItemAtPosition(posicion));
                 lblSeleccionado.setText("Mueble seleccionado: "+ ((Mueble)lstMuebles.getItemAtPosition(posicion)).getNombre());
             }
         });
 
 
-        muebles.add(new Mueble(1,"Sofa comodo",100, 1,"sofa comodo"));
+        muebles.add(new Mueble(1,"Sofa comodo","100", 1,"sofa comodo"));
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_lista, menu);
@@ -94,14 +93,14 @@ public class Listado extends AppCompatActivity {
                 builder.show();
                 break;
             case R.id.aniadirMueble:
-                Log.d("LogCat","Pulsó la opción de menú Añadir Contacto");
+                Log.d("LogCat","Pulsó la opción de menú Añadir Mueble");
                 Intent i = new Intent(this, AniadirMueble.class);
                 Log.d("LogCat", "Item seleccionado "+muebleSeleccionado);
                 i.putExtra("nombre", muebles.get(muebleSeleccionado).getNombre());
                 i.putExtra("precio", muebles.get(muebleSeleccionado).getPrecio());
                 i.putExtra("tipo",muebles.get(muebleSeleccionado).getCategoria());
                 i.putExtra("descripcion",muebles.get(muebleSeleccionado).getDescripcion());
-                startActivityForResult(i, 1234);
+                startActivityForResult(i, 4321);
                 break;
 
         }
@@ -129,8 +128,6 @@ public class Listado extends AppCompatActivity {
 
         }
         return true;
-
-
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -138,15 +135,15 @@ public class Listado extends AppCompatActivity {
         Bundle b = data.getExtras();
         if (requestCode == 1234){
             if (resultCode == RESULT_OK){
-                Mueble muebleModificado = new Mueble(1,b.getString("nombre"),b.getInt("precio"), b.getInt("tipo"), b.getString("descripcion"));
+                Mueble muebleModificado = new Mueble(1,b.getString("nombre"),b.getString("precio"), b.getInt("tipo"), b.getString("descripcion"));
                 muebles.set(muebleSeleccionado, muebleModificado);
                 ((AdaptadorLista)lstMuebles.getAdapter()).notifyDataSetChanged();
             }
         }
         if (requestCode == 4321){
             if (resultCode == RESULT_OK){
-                Mueble nuevoMueble = new Mueble(1,b.getString("nombre"),b.getInt("precio"), b.getInt("tipo"), b.getString("descripcion"));
-                muebles.set(muebleSeleccionado, nuevoMueble);
+                Mueble nuevoMueble = new Mueble(1,b.getString("nombre"),b.getString("precio"), b.getInt("tipo"), b.getString("descripcion"));
+                muebles.add(nuevoMueble);
                 ((AdaptadorLista)lstMuebles.getAdapter()).notifyDataSetChanged();
             }
         }

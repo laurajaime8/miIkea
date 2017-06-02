@@ -25,18 +25,15 @@ public class DetallesMueble extends AppCompatActivity {
         setContentView(R.layout.activity_detalles_mueble);
 
 
-        //Obtenemos las referencias a los elementos gráficos de la GUI
         txtNombreC=(EditText)findViewById(R.id.txtNombre);
         txtPrecioC=(EditText)findViewById(R.id.txtPrecio);
         spinnerTipo=(Spinner)findViewById(R.id.spinnerTipo);
 
-        //Llenar de contenido el Spinner
-        String[]opciones={"Hogar", "Oficina"};
+        String[]opciones={"Hogar", "Oficina", "Baño"};
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, opciones);
         spinnerTipo.setAdapter(adapter);
         txtDescripcionC=(EditText)findViewById(R.id.txtDescripcion);
 
-//Recoger los datos enviados por la primera actividad y mostrarlos en la GUI
         Bundle bundle=getIntent().getExtras();
         txtNombreC.setText(bundle.getString("nombre"));
         txtPrecioC.setText(bundle.getString("precio"));

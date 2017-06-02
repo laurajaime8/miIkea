@@ -33,7 +33,6 @@ public class Bienvenida extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_bienvenida, menu);
         return true;
     }
@@ -43,7 +42,6 @@ public class Bienvenida extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.acercaDe:
                 Log.d("LogCat", "Pulsó la opción de menú Acerca De...");
-                //Se muestra una ventana de diálogo
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Acerca de...");
                 builder.setMessage("Aplicación creada por Laura Jaime y Oliva Gálvez");

@@ -37,12 +37,15 @@ public class AdaptadorLista extends ArrayAdapter {
         ImageView imagMueble = (ImageView)item.findViewById(R.id.imagMueble);
         switch (muebles.get(position).getCategoria())
         {
-            case 1: //Cargar imagen de muebles de tipo "hogar"
+            case 0: //Cargar imagen de muebles de tipo "hogar"
                 imagMueble.setImageResource(R.drawable.hogar);
                 break;
-            case 2://Cargar imagen de muebles de tipo "oficina"
+            case 1://Cargar imagen de muebles de tipo "oficina"
                 imagMueble.setImageResource(R.drawable.oficina);
                 break;
+            case 2:
+                //Cargar imagen de muebles de tipo baño
+                imagMueble.setImageResource(R.drawable.banio);
         }
         return(item);
     }

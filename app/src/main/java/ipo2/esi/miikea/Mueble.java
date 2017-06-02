@@ -7,12 +7,12 @@ package ipo2.esi.miikea;
 public class Mueble {
     private int codigo;
     private String nombre;
-    private int precio;
-    private int categoria; //Que tipo de articulo es
+    private String precio;
+    private int categoria; //Que tipo de articulo es 1:hogar 2:oficina
     private String descripcion;
 
 
-    public Mueble(int codigo, String nombre, int precio, int categoria, String descripcion) {
+    public Mueble(int codigo, String nombre, String precio, int categoria, String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
@@ -20,19 +20,12 @@ public class Mueble {
         this.descripcion = descripcion;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
@@ -48,7 +41,7 @@ public class Mueble {
         this.nombre = nombre;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 

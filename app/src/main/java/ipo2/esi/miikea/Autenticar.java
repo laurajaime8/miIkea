@@ -1,18 +1,15 @@
 package ipo2.esi.miikea;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.Toast;
+
+
 
 
 /**
@@ -21,10 +18,11 @@ import android.widget.EditText;
 
 public class Autenticar extends Activity {
 
-     EditText txtMail;
-     EditText txtPassword;
+     private EditText txtMail;
+     private EditText txtPassword;
+     private ConectorBD conector;
+     private Cursor fila;
 
-    private Cursor fila;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,45 +31,29 @@ public class Autenticar extends Activity {
 
         txtMail = (EditText) findViewById(R.id.txtMail);
         txtPassword = (EditText) findViewById(R.id.txtPassword);
+        conector = new ConectorBD(this);
     }
 
-
     public void oyente_btnLoguearse(View v) {
-        Intent i = new Intent(this, Listado.class);
-        startActivity(i);
-        /*UsuariosSQLiteHelper admin = new UsuariosSQLiteHelper(this, "miikea",null,1);
-        SQLiteDatabase db = admin.getWritableDatabase();
+        UsuariosSQLiteHelper admin=new UsuariosSQLiteHelper(this,"miIkea",null,1);
+        SQLiteDatabase db=admin.getWritableDatabase();
+        String email=txtMail.getText().toString();
+        String password=txtPassword.getText().toString();
+        fila=db.rawQuery("select email,password from usuarios where email='"+email+"' and password='"+password+"'",null);
 
-        String mail = txtMail.getText().toString();
-        String pass = txtPassword.getText().toString();
-        fila=db.rawQuery("select email,password from usuarios where email='"+mail+"' and password='"+pass+"'",null);
-
-        if(fila.moveToFirst()){
-
-                String u = fila.getString(0);
-                String p = fila.getString(1);
-
-                if (mail.equals(u) && pass.equals(p)) {*/
-                   // Intent i = new Intent(this, Lista.class);
-                  //  startActivity(i);
-               // }
-
-
-       // }
-       
+        if (fila.moveToFirst()){
+            String mail=fila.getString(0);
+            String pass=fila.getString(1);
+            if (email.equals(mail)&&password.equals(pass)){
+                Toast.makeText(Autenticar.this, "Autenticación correcta. Conectando....", Toast.LENGTH_SHORT).show();
+                Intent ven=new Intent(this,Listado.class);
+                startActivity(ven);
+            }
+        }
     }
 
     public void oyente_btnRegistrarse(View v){
         Intent i = new Intent(this, Registrar.class);
         startActivity(i);
     }
-
-
-
-
-
-
-
-
-
 }
